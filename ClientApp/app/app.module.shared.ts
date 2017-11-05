@@ -19,6 +19,9 @@ import { courseDetailComponent } from './components/courseDetails/courseDetails.
 import { newCourseComponent } from './components/newCourse/newCourse.component';
 import { editCourseComponent } from './components/editCourse/editCourse.component';
 
+import { viewSubjectComponent } from './components/viewSubject/viewSubject.component';
+import { subjectDetailComponent } from './components/subjectDetails/subjectDetails.component';
+
 
 import { StudentServices } from './services/studentServices';
 import { CourseServices } from './services/courseServices';
@@ -42,6 +45,9 @@ import { searchCourse } from './pipes/searchCourse';
         newCourseComponent,
         editCourseComponent,
 
+        viewSubjectComponent,
+        subjectDetailComponent,
+
         searchStudent,
         searchCourse
 
@@ -61,9 +67,12 @@ import { searchCourse } from './pipes/searchCourse';
 
             { path: 'student-detail/:id', component: studentDetailComponent },
             { path: 'course-detail/:id', component: courseDetailComponent },
+            { path: 'subject-detail/:id', component: subjectDetailComponent },
+
 
             { path: 'view-student', component: viewStudentComponent },
             { path: 'view-course', component: viewCourseComponent },
+            { path: 'view-subject', component: viewSubjectComponent },
             
 
             { path: 'new-student', component: newStudentComponent },

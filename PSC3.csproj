@@ -35,12 +35,14 @@
     <None Remove="ClientApp\app\components\newCourse\newCourse.component.ts" />
     <None Remove="ClientApp\app\components\newStudent\newStudent.component.ts" />
     <None Remove="ClientApp\app\components\studentDetails\studentDetails.component.ts" />
+    <None Remove="ClientApp\app\components\subjectDetails\subjectDetails.component.ts" />
     <None Remove="ClientApp\app\components\viewCourse\viewCourse.component.ts" />
     <None Remove="ClientApp\app\components\viewStudent\viewStudent.component.ts" />
     <None Remove="ClientApp\app\pipes\searchCourse.ts" />
     <None Remove="ClientApp\app\pipes\searchStudent.ts" />
     <None Remove="ClientApp\app\services\courseServices.ts" />
     <None Remove="ClientApp\app\services\studentServices.ts" />
+    <None Remove="ClientApp\app\services\subjectServices.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,12 +52,15 @@
     <TypeScriptCompile Include="ClientApp\app\components\newCourse\newCourse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\newStudent\newStudent.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\studentDetails\studentDetails.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\subjectDetails\subjectDetails.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\viewCourse\viewCourse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\viewStudent\viewStudent.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\viewSubject\viewSubject.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\pipes\searchCourse.ts" />
     <TypeScriptCompile Include="ClientApp\app\pipes\searchStudent.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\courseServices.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\studentServices.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\subjectServices.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

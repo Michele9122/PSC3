@@ -92,7 +92,7 @@ namespace PSC3.Controllers
                                         emp.Titolo,
                                         emp.DurataAnni,
                                         pro.MateriaId,
-                                        pro.Nome,
+                                        pro.Denominazione,
                                         pro.Crediti,
                                         pro.Semestre
 

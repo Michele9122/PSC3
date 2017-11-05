@@ -12,11 +12,12 @@ namespace PSC3.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MateriaId { get; set; }
-        public string Nome { get; set; }
+        public string Denominazione { get; set; }
         public int Crediti { get; set; }
         public int Semestre { get; set; }
         public int CorsoId { get; set; }
-        public Course Course { get; set; }
-        public Teacher Teacher { get; set; }
+        public int InsegnateId { get; set; }
+        public  Course Course { get; set; }
+        public  Teacher Teacher { get; set; }
     }
 }
