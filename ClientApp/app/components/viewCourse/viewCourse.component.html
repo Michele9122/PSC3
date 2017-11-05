@@ -1,0 +1,79 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h3>Lista Corsi</h3>
+        <br />
+        <br />
+        <br />
+    </div>
+    <div class="col-md-12">
+
+        <div class="form-actions no-color">
+
+            <div>
+                <span style="font-weight:bold;font-size:14px">Ricerca(nome,cognome o matricola):</span>
+                <input type="text" name="searchdata" #search (keyup)="0" />
+
+
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        S.No.
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Titolo
+                    </th>
+                    <th>
+                        Durata Anni
+                    </th>
+                    <th>
+                        Azione
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let empData of CourseList | searchCourse:search.value  ; let i = index; trackBy: corsoId">
+                    <td>
+                        {{i+1}}
+                    </td>
+                    <td>
+                        {{empData.corsoId}}
+                    </td>
+                    <td>
+                        {{empData.titolo}}
+                    </td>
+                    <td>
+                        {{empData.durataAnni}}
+                    </td>
+                    <td>
+
+                        <a [routerLink]="['/course-detail/',empData.corsoId]"
+                           class="btn btn-primary">
+                            Dettagli
+                        </a>
+                        <a [routerLink]="['/edit-course/',empData.corsoId]"
+                           class="btn btn-success">
+                            Modifica
+                        </a>
+                        <a class="btn btn-danger" (click)="deleteCourse(empData.corsoId)">
+                            Cancella
+                        </a>
+                    </td>
+                </tr>
+
+        </table>
+    </div>
+</div> 

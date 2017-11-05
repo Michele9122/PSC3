@@ -1,0 +1,67 @@
+﻿<style>
+    .hidedata {
+        padding-top: 50px;
+    }
+</style>
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="col-md-8 col-lg-offset-4">
+            <h3>Modifica Studente </h3>
+        </div>
+
+        <div class="row hidedata" id="hidDiv">
+            <div class="col-md-6 ">
+                <form class="form-horizontal" [formGroup]="formData" (ngSubmit)="submitData()">
+                    <div class="form-group">
+                        <label for="CorsoId" class="col-sm-4 control-label">CorsoId</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="Nome" placeholder="CorsoId"
+                                   formControlName="CorsoId">
+                        </div>
+                        <div *ngIf="!formData.get('CorsoId').valid && formData.get('CorsoId').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci nome studente
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Titolo" class="col-sm-4 control-label">Titolo</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="Titolo" placeholder="Titolo"
+                                   formControlName="Titolo">
+                        </div>
+                        <div *ngIf="!formData.get('Titolo').valid && formData.get('Titolo').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci cognome studente
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="DurataAnni" class="col-sm-4 control-label">Durata Anni</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control"
+                                   name="DurataAnni" placeholder="Durata Anni"
+                                   formControlName="DurataAnni">
+                        </div>
+                        <div *ngIf="!formData.get('DurataAnni').valid && formData.get('DurataAnni').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci codice fiscale
+                        </div>
+                    </div>
+                    <div>
+                        <input type="hidden" id="empId" name="empId" formControlName="StudenteId" />
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" [disabled]="!formData.valid" class="btn btn-info">Invia</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>   

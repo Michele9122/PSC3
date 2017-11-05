@@ -1,0 +1,134 @@
+﻿<style>
+    .hidedata {
+        padding-top: 50px;
+    }
+</style>
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="col-md-8 col-lg-offset-4">
+            <h3>Modifica Studente </h3>
+        </div>
+
+        <div class="row hidedata" id="hidDiv">
+            <div class="col-md-6 ">
+                <form class="form-horizontal" [formGroup]="formData" (ngSubmit)="submitData()">
+                    <div class="form-group">
+                        <label for="Nome" class="col-sm-4 control-label">Nome</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="Nome" placeholder="Nome"
+                                   formControlName="Nome">
+                        </div>
+                        <div *ngIf="!formData.get('Nome').valid && formData.get('Nome').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci nome studente
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Cognome" class="col-sm-4 control-label">Cognome</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="Cognome" placeholder="Cognome"
+                                   formControlName="Cognome">
+                        </div>
+                        <div *ngIf="!formData.get('Cognome').valid && formData.get('Cognome').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci cognome studente
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="DataNascita" class="col-sm-4 control-label">Data Nascita</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control"
+                                   name="DataNascita" placeholder="Data Nascita" ng-model="DataNascita"
+                                   formControlName="DataNascita">
+                        </div>
+                        <div *ngIf="!formData.get('DataNascita').valid && formData.get('DataNascita').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci data nascita
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="CodiceFiscale" class="col-sm-4 control-label">Codice Fiscale</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="CodiceFiscale" placeholder="Codice Fiscale"
+                                   formControlName="CodiceFiscale">
+                        </div>
+                        <div *ngIf="!formData.get('CodiceFiscale').valid && formData.get('CodiceFiscale').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci codice fiscale
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Sesso" class="col-sm-4 control-label">Sesso</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="Sesso"
+                                    formControlName="Sesso">
+                                <option value="0">---Seleziona---</option>
+                                <option value="true">Maschio</option>
+                                <option value="false">Femmina</option>
+                            </select>
+                        </div>
+                        <div *ngIf="!formData.get('Sesso').valid && formData.get('Sesso').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci sesso
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="AnnoIscrizione" class="col-sm-4 control-label">Anno Iscrizione</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" ng-model="AnnoIscrizione"
+                                   name="AnnoIscrizione" placeholder="Anno Iscrizione"
+                                   formControlName="AnnoIscrizione">
+                        </div>
+                        <div *ngIf="!formData.get('AnnoIscrizione').valid && formData.get('AnnoIscrizione').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci anno iscrizione
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Matricola" class="col-sm-4 control-label">Matricola</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="Matricola" placeholder="Matricola"
+                                   formControlName="Matricola">
+                        </div>
+                        <div *ngIf="!formData.get('Matricola').valid && formData.get('Matricola').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci la matricola
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Corso" class="col-sm-4 control-label">Corso</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="Corso"
+                                    formControlName="Corso">
+                                <option value="0">---Seleziona---</option>
+                                <option *ngFor="let data of CourseList" value={{data.corsoId}}>
+                                    {{data.titolo}}
+                                </option>
+                            </select>
+                        </div>
+                        <div *ngIf="!formData.get('Corso').valid && !formData.get('Corso').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Seleziona un corso
+                        </div>
+                    </div>
+                    <div>
+                        <input type="hidden" id="empId" name="empId" formControlName="StudenteId" />
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" [disabled]="!formData.valid" class="btn btn-info">Invia</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>   

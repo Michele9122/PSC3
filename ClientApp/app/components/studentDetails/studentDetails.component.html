@@ -1,0 +1,27 @@
+﻿<h2>Visualizza dettagli studente</h2>
+
+<div class="row">
+    <div class="col-md-3"><b>Nome</b></div><div class="col-md-3">{{StudentDetails.Nome}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Cognome</b></div><div class="col-md-3">{{StudentDetails.Cognome}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Codice Fiscale</b></div><div class="col-md-3">{{StudentDetails.CodiceFiscale}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Data di Nascita</b></div><div class="col-md-3">{{StudentDetails.DataNascita | date: 'dd/MM/yyyy'}}</div>
+</div>
+<div class="row">
+
+    <div class="col-md-3"><b>Sesso</b></div><div class="col-md-3">{{StudentDetails.Sesso ? 'Maschio' : 'Femmina'}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Corso</b></div><div class="col-md-3">{{StudentDetails.Titolo}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Matricola</b></div><div class="col-md-3">{{StudentDetails.Matricola}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Data di Iscrizione</b></div><div class="col-md-3">{{StudentDetails.AnnoIscrizione | date: 'dd/MM/yyyy'}}</div>
+</div>

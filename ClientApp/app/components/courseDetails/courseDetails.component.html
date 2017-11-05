@@ -1,0 +1,55 @@
+﻿<h2>Visualizza dettagli corso</h2>
+
+<div class="row">
+    <div class="col-md-3"><b>Corso ID</b></div><div class="col-md-3">{{CourseDetails.CorsoId}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Titolo</b></div><div class="col-md-3">{{CourseDetails.Titolo}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3"><b>Durata Anni</b></div><div class="col-md-3">{{CourseDetails.DurataAnni}}</div>
+</div>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        MateriaId
+                    </th>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Crediti
+                    </th>
+                    <th>
+                        Semestre
+                    </th> 
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let empData of CourseDetails ; let i = index">
+                    <td>
+                        {{i+1}}
+                    </td>
+                    <td>
+                        {{empData.materiaId}}
+                    </td>
+                    <td>
+                        {{empData.nome}}
+                    </td>
+                    <td>
+                        {{empData.crediti}}
+                    </td>
+                    <td>
+                        {{empData.semestre}}
+                    </td>
+                </tr>
+
+        </table>
+    </div>
+</div> 
+
+

@@ -1,0 +1,85 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h3>Lista Studenti</h3>
+        <br />
+        <br />
+        <br />
+    </div>
+    <div class="col-md-12">
+
+        <div class="form-actions no-color">
+
+            <div>
+                <span style="font-weight:bold;font-size:14px">Ricerca(nome,cognome o matricola):</span>
+                <input type="text" name="searchdata" #search (keyup)="0" />
+
+
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        S.No.
+                    </th>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Cognome
+                    </th>
+                    <th>
+                        Matricola
+                    </th>
+                    <th>
+                        Corso
+                    </th>
+                    <th>
+                        Azione
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let empData of StudentList | searchStudent:search.value  ; let i = index; trackBy: StudenteId">
+                    <td>
+                        {{i+1}}
+                    </td>
+                    <td>
+                        {{empData.nome}}
+                    </td>
+                    <td>
+                        {{empData.cognome}}
+                    </td>
+                    <td>
+                        {{empData.matricola}}
+                    </td>
+                    <td>
+                        {{empData.course}}
+                    </td>
+                    <td>
+
+                        <a [routerLink]="['/student-detail/',empData.studenteId]"
+                           class="btn btn-primary">
+                            Dettagli
+                        </a>
+                        <a [routerLink]="['/edit-student/',empData.studenteId]"
+                           class="btn btn-success">
+                            Modifica
+                        </a>
+                        <a class="btn btn-danger" (click)="deleteStudent(empData.studenteId)">
+                            Cancella
+                        </a>
+                    </td>
+                </tr>
+
+        </table>
+    </div>
+</div> 
