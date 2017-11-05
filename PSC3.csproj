@@ -34,6 +34,7 @@
     <None Remove="ClientApp\app\components\editStudent\editStudent.component.ts" />
     <None Remove="ClientApp\app\components\newCourse\newCourse.component.ts" />
     <None Remove="ClientApp\app\components\newStudent\newStudent.component.ts" />
+    <None Remove="ClientApp\app\components\newSubject\newSubject.component.ts" />
     <None Remove="ClientApp\app\components\studentDetails\studentDetails.component.ts" />
     <None Remove="ClientApp\app\components\subjectDetails\subjectDetails.component.ts" />
     <None Remove="ClientApp\app\components\viewCourse\viewCourse.component.ts" />
@@ -51,6 +52,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\editStudent\editStudent.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\newCourse\newCourse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\newStudent\newStudent.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\newSubject\newSubject.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\studentDetails\studentDetails.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\subjectDetails\subjectDetails.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\viewCourse\viewCourse.component.ts" />

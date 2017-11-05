@@ -10,7 +10,8 @@ namespace PSC3.ViewModels
         public int MateriaId { get; set; }
         public string Denominazione { get; set; }
         public int Crediti { get; set; }
-        public int Semestre { get; set; }
+        public bool Semestre { get; set; }
+        public int Anno { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
     }

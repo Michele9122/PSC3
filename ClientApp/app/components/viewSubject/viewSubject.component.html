@@ -1,10 +1,97 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿<div class="row">
+    <div class="col-md-12">
+        <h3>Lista Materie</h3>
+        <br />
+        <br />
+        <br />
+    </div>
+    <div class="col-md-12">
 
-</body>
-</html>
+        <div class="form-actions no-color">
+
+            <div>
+                <span style="font-weight:bold;font-size:14px">Ricerca(nome,cognome o matricola):</span>
+                <input type="text" name="searchdata" #search (keyup)="0" />
+
+
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        S.No.
+                    </th>
+                    <th>
+                        Materia ID
+                    </th>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Crediti
+                    </th>
+                    <th>
+                        Anno
+                    </th>
+                    <th>
+                        Semestre
+                    </th>
+                    <th>
+                        Professore
+                    </th>
+                    <th>
+                        Azione
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let empData of SubjectList | searchStudent:search.value  ; let i = index; trackBy: materiaId">
+                    <td>
+                        {{i+1}}
+                    </td>
+                    <td>
+                        {{empData.materiaId}}
+                    </td>
+                    <td>
+                        {{empData.denominazione}}
+                    </td>
+                    <td>
+                        {{empData.crediti}}
+                    </td>
+                    <td>
+                        {{empData.anno}}
+                    </td>
+                    <td>
+                        {{empData.semestre ? 'Primo' : 'Secondo' }}
+                    </td>
+                    <td>
+                        {{empData.nome}} {{empData.cognome}}
+                    </td>
+                    <td>
+
+                        <a [routerLink]="['/subject-detail/',empData.materiaId]"
+                           class="btn btn-primary">
+                            Dettagli
+                        </a>
+                        <a [routerLink]="['/edit-subject/',empData.materiaId]"
+                           class="btn btn-success">
+                            Modifica
+                        </a>
+                        <a class="btn btn-danger" (click)="deleteSubject(empData.materiaId)">
+                            Cancella
+                        </a>
+                    </td>
+                </tr>
+
+        </table>
+    </div>
+</div> 

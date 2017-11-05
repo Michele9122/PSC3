@@ -16,6 +16,10 @@ export class SubjectServices {
         return this.http.get('http://localhost:5000/api/subject/' + empId);
     }
 
+    getTeacherList() {
+        return this.http.get('http://localhost:5000/api/teacher/');
+    }
+
     removeSubjectDetails(empId: any) {
         let headers = new Headers({
             'Content-Type':
@@ -29,6 +33,14 @@ export class SubjectServices {
 
     }
 
+    postData(empObj: any) {
+        let headers = new Headers({
+            'Content-Type':
+            'application/json; charset=utf-8'
+        });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post('http://localhost:5000/api/subject', JSON.stringify(empObj), options);
+    }
 
 
 }

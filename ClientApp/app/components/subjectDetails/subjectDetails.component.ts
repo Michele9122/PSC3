@@ -18,14 +18,13 @@ export class subjectDetailComponent {
 
         this.empService.getSubjectDetails(this.empId)
             .subscribe((data: Response) =>
-                (this.SubjectDetails["Nome"] = data.json().nome,
-                    this.SubjectDetails["Cognome"] = data.json().cognome,
-                    this.SubjectDetails["DataNascita"] = data.json().dataNascita,
-                    this.SubjectDetails["CodiceFiscale"] = data.json().codiceFiscale,
-                    this.SubjectDetails["Sesso"] = data.json().sesso,
-                    this.SubjectDetails["AnnoIscrizione"] = data.json().annoIscrizione,
-                    this.SubjectDetails["Matricola"] = data.json().matricola,
-                    this.SubjectDetails["Titolo"] = data.json().titolo
+                (this.SubjectDetails["MateriaId"] = data.json().materiaId,
+                    this.SubjectDetails["Denominazione"] = data.json().denominazione,
+                    this.SubjectDetails["Crediti"] = data.json().crediti,
+                    this.SubjectDetails["Semestre"] = data.json().semestre,
+                    this.SubjectDetails["Anno"] = data.json().anno,
+                    this.SubjectDetails["Nome"] = data.json().nome,
+                    this.SubjectDetails["Cognome"] = data.json().cognome
 
                 ));
 

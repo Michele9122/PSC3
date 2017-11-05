@@ -21,10 +21,12 @@ import { editCourseComponent } from './components/editCourse/editCourse.componen
 
 import { viewSubjectComponent } from './components/viewSubject/viewSubject.component';
 import { subjectDetailComponent } from './components/subjectDetails/subjectDetails.component';
-
+//import { newSubjectComponent } from './components/newSubject/newSubject.component';
+ 
 
 import { StudentServices } from './services/studentServices';
 import { CourseServices } from './services/courseServices';
+import { SubjectServices } from './services/subjectServices';
  
 import { searchStudent } from './pipes/searchStudent';
 import { searchCourse } from './pipes/searchCourse';
@@ -47,13 +49,14 @@ import { searchCourse } from './pipes/searchCourse';
 
         viewSubjectComponent,
         subjectDetailComponent,
+// newSubjectComponent,
 
         searchStudent,
         searchCourse
 
     ],
 
-    providers: [StudentServices, CourseServices],
+    providers: [StudentServices, CourseServices, SubjectServices],
 
     imports: [
         CommonModule,
@@ -77,6 +80,7 @@ import { searchCourse } from './pipes/searchCourse';
 
             { path: 'new-student', component: newStudentComponent },
             { path: 'new-course', component: newCourseComponent },
+         //   { path: 'new-subject', component: newSubjectComponent },
 
             { path: 'edit-student/:id', component: editStudentComponent },
             { path: 'edit-course/:id', component: editCourseComponent },

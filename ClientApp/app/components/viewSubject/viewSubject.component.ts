@@ -17,7 +17,7 @@ export class viewSubjectComponent {
 
     }
 
-    deleteStudent(empId: number) {
+    deleteSubject(empId: number) {
 
 
         var status = confirm("Sei sicuro di voler cancellare questa materia?");
@@ -25,7 +25,7 @@ export class viewSubjectComponent {
             this.empService.removeSubjectDetails(empId)
                 .subscribe((data: Response) => (alert("Materia cancellata con successo")));
 
-            //aggiorna la lista studenti
+            //aggiorna la lista materie
             this.empService.getSubjectList()
                 .subscribe(
                 (data: Response) => (this.SubjectList = data.json())

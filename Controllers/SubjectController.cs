@@ -33,6 +33,7 @@ namespace PSC.Controllers
                                       emp.Denominazione,
                                       emp.Crediti,
                                       emp.Semestre,
+                                      emp.Anno,
                                       pro.Nome,
                                       pro.Cognome
 
@@ -45,12 +46,47 @@ namespace PSC.Controllers
                 Obj.Denominazione = x.Denominazione;
                 Obj.Crediti = x.Crediti;
                 Obj.Semestre = x.Semestre;
+                Obj.Anno = x.Anno;
                 Obj.Nome = x.Nome;
                 Obj.Cognome = x.Cognome;
                 ilIst.Add(Obj);
             });
 
             return Json(ilIst);
+        }
+
+        [HttpGet("{empId}")]
+        public async Task<IActionResult> SubjectDetails(int empId)
+        {
+
+            var EmpDetails = await (from emp in _context.Subject
+                                    join pro in _context.Teacher on emp.InsegnateId equals pro.InsegnateId
+                                    where emp.InsegnateId == empId
+                                    select new
+                                    {
+                                        emp.MateriaId,
+                                        emp.Denominazione,
+                                        emp.Crediti,
+                                        emp.Semestre,
+                                        emp.Anno,
+                                        pro.Nome,
+                                        pro.Cognome
+
+                                    }
+                          ).FirstAsync();
+
+
+            return Json(EmpDetails);
+        }
+
+        [HttpPost]
+        public IActionResult AddSubject([FromBody]Subject empObj)
+        {
+            _context.Subject.Add(empObj);
+            _context.SaveChanges();
+            return Json("OK");
+
+
         }
     }
 }

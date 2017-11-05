@@ -42,7 +42,11 @@
                         <span class='glyphicon glyphicon-align-right'></span> Materie
                     </a>
                 </li>
-               
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/new-subject']">
+                        <span class='glyphicon glyphicon-plus-sign'></span><span class='glyphicon glyphicon-align-right'></span> Aggiungi Materia
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

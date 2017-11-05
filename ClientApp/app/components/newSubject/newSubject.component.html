@@ -1,0 +1,89 @@
+﻿
+<style>
+    .hidedata {
+        padding-top: 50px;
+    }
+</style>
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="col-md-8 col-lg-offset-4">
+            <h3>Inserisci dettagli studente</h3>
+        </div>
+
+        <div class="row hidedata" id="hidDiv">
+            <div class="col-md-6 ">
+                <form class="form-horizontal" [formGroup]="formData" (ngSubmit)="submitData()">
+                    <div class="form-group">
+                        <label for="MateriaId" class="col-sm-4 control-label">MateriaId</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="MateriaId" placeholder="MateriaId"
+                                   formControlName="MateriaId">
+                        </div>
+                        <div *ngIf="!formData.get('MateriaId').valid && formData.get('MateriaId').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci ID Materia
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Denominazione" class="col-sm-4 control-label">Denominazione</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="Denominazione" placeholder="Denominazione"
+                                   formControlName="Denominazione">
+                        </div>
+                        <div *ngIf="!formData.get('Denominazione').valid && formData.get('Denominazione').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci denominazione
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Crediti" class="col-sm-4 control-label">
+                        
+                        
+                        Nascita</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"
+                                   name="DataNascita" placeholder="Data Nascita"
+                                   formControlName="DataNascita">
+                        </div>
+                        <div *ngIf="!formData.get('DataNascita').valid && formData.get('DataNascita').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Inserisci data nascita
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="Corso" class="col-sm-4 control-label">Corso</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="Corso"
+                                    formControlName="Corso">
+                                <option value="0">---Seleziona---</option>
+                                <option *ngFor="let data of TeacherList" value={{data.insegnateId}}>
+                                    {{data.nome}} {{data.cognome}}
+                                </option>
+                            </select>
+
+                        </div>
+                        <div *ngIf="!formData.get('Corso').valid && !formData.get('Corso').dirty"
+                             class="col-sm-8 col-sm-offset-4" style="color:red">
+                            Seleziona un insegnante
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" [disabled]="!formData.valid" class="btn btn-info">Invia</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>   
